@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-[#0A0A0A]">
+    <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-[#ffffff]">
 
       {/* ── Background Video ── */}
       <video
@@ -24,8 +24,8 @@ export default function Hero() {
       />
 
       {/* ── Dark cinematic overlay — heavier at bottom for text legibility ── */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/20" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/80 via-transparent to-transparent" />
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/80 via-transparent to-transparent" /> */}
 
       {/* ── Film grain texture overlay ── */}
       <div className="absolute inset-0 film-grain opacity-[0.03] pointer-events-none" />
@@ -65,14 +65,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className="font-cinzel font-bold text-white leading-[1.05] mb-6"
+          className="font-cinzel font-bold text-[#0A0A0A] leading-[1.05] mb-6"
           style={{ fontSize: "clamp(2.8rem, 8vw, 7rem)" }}
         >
           Your Story,
           <br />
           <span className="text-[#C9A84C] text-glow">Beautifully</span>
           <br />
-          <span className="text-white/90">Told.</span>
+          <span className="text-[#0A0A0A]/90">Told.</span>
         </motion.h1>
 
         {/* Subtext */}
@@ -80,7 +80,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-gray-300/80 font-inter text-base md:text-lg leading-relaxed mb-10 max-w-xl"
+          className="text-gray-700/80 font-inter text-base md:text-lg leading-relaxed mb-10 max-w-xl"
         >
           Wedding films, birthday memories, event highlights — I take your raw footage
           and shape it into something you'll want to watch again and again.
@@ -102,7 +102,7 @@ export default function Hero() {
 
           <button
             onClick={() => scrollTo("contact")}
-            className="border border-white/30 text-white px-8 py-4 font-inter font-semibold text-sm tracking-widest uppercase hover:border-[#C9A84C] hover:text-[#C9A84C] backdrop-blur-sm bg-black/20 transition-all duration-300"
+            className="border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-4 font-inter font-semibold text-sm tracking-widest uppercase hover:border-[#C9A84C] hover:text-[#C9A84C] backdrop-blur-sm bg-white/20 transition-all duration-300"
           >
             Get a Quote
           </button>
@@ -113,7 +113,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.3 }}
-          className="flex gap-10 mt-14 pt-8 border-t border-white/10"
+          className="flex gap-10 mt-14 pt-8 border-t border-[#0A0A0A]/10"
         >
           {[
             { number: "150+", label: "Videos Edited" },

@@ -16,7 +16,7 @@ export default function About() {
   const imgInView = useInView(imgRef, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="bg-[#0A0A0A] py-24 px-6">
+    <section id="about" className="bg-[#ffffff] pt-24 md:px-6 sm:px-6 px-0">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Image side */}
         <motion.div
@@ -50,7 +50,7 @@ export default function About() {
           <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase font-inter mb-4">
             About Me
           </p>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
             I Edit Videos That
             <br />
             <span className="text-[#C9A84C]">People Actually</span>
@@ -61,7 +61,7 @@ export default function About() {
           <div className="w-12 h-0.5 bg-[#C9A84C] mb-8" />
 
           <p className="text-gray-400 font-inter text-base leading-relaxed mb-5">
-            Hi, I'm <span className="text-white font-semibold">Hassan</span> — a freelance video editor
+            Hi, I'm <span className="text-black font-semibold">Hassan</span> — a freelance video editor
             based in Pakistan. I've been editing videos for over 3 years, working with couples,
             families, and small businesses to tell their stories through well-crafted edits.
           </p>
@@ -94,6 +94,9 @@ export default function About() {
           </div>
         </motion.div>
       </div>
+
+      {/* ── Film strip bottom decoration ── */}
+      <div className="mt-35 w-full bottom-0 left-0 right-0 h-2 bg-[#C9A84C]/40 z-10" />
     </section>
   );
 }

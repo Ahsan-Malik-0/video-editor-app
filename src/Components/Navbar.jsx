@@ -23,15 +23,15 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg shadow-black/40" : "bg-transparent"
+      className={`fixed rounded-lg top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "backdrop-blur-md shadow-md shadow-black/10" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2">
           <span className="text-[#C9A84C] text-2xl">✦</span>
-          <span className="font-cinzel text-white text-xl font-bold tracking-widest">
+          <span className="font-cinzel text-black text-xl font-bold tracking-widest">
             FRAME<span className="text-[#C9A84C]">CRAFT</span>
           </span>
         </button>
@@ -42,7 +42,7 @@ export default function Navbar() {
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className="text-gray-300 hover:text-[#C9A84C] text-sm tracking-widest font-inter transition-colors duration-200 uppercase"
+              className="text-gray-500 hover:text-[#C9A84C] text-sm tracking-widest font-inter transition-colors duration-200 uppercase"
             >
               {link}
             </button>

@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#0A0A0A] py-24 px-6">
+    <section id="contact" className="bg-white pt-24 md:px-6 sm:px-6 px-0">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -34,7 +34,7 @@ export default function Contact() {
           <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase font-inter mb-4">
             Let's Work Together
           </p>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-black">
             Get in Touch
           </h2>
           <div className="w-16 h-0.5 bg-[#C9A84C] mx-auto mt-6" />
@@ -94,7 +94,7 @@ export default function Contact() {
                   <a
                     key={s.label}
                     href={s.href}
-                    className="text-xs text-gray-500 border border-white/10 px-3 py-2 font-inter tracking-wide hover:border-[#C9A84C]/40 hover:text-[#C9A84C] transition-all duration-300"
+                    className="text-xs text-gray-500 border border-black/30 px-3 py-2 font-inter tracking-wide hover:border-[#C9A84C]/50 hover:text-[#C9A84C] transition-all duration-300"
                   >
                     {s.label}
                   </a>
@@ -110,7 +110,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-2">
                 <div>
                   <label className="text-gray-500 text-xs tracking-widest uppercase font-inter block mb-2">
                     Your Name
@@ -122,7 +122,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Ahmed Khan"
-                    className="w-full bg-[#111111] border border-white/10 text-white font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 placeholder-gray-700 transition-colors"
+                    className="w-full bg-white border border-black/10 text-white font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 placeholder-gray-700 transition-colors"
                   />
                 </div>
                 <div>
@@ -136,12 +136,12 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="you@example.com"
-                    className="w-full bg-[#111111] border border-white/10 text-white font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 placeholder-gray-700 transition-colors"
+                    className="w-full bg-white border border-black/10 text-black font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 placeholder-gray-700 transition-colors"
                   />
                 </div>
               </div>
 
-              <div>
+              <div className="mb-2">
                 <label className="text-gray-500 text-xs tracking-widest uppercase font-inter block mb-2">
                   Service Needed
                 </label>
@@ -150,7 +150,7 @@ export default function Contact() {
                   value={form.service}
                   onChange={handleChange}
                   required
-                  className="w-full bg-[#111111] border border-white/10 text-gray-300 font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 transition-colors appearance-none"
+                  className="w-full bg-white border border-black/10 text-black font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 transition-colors appearance-none"
                 >
                   <option value="" disabled>Select a service</option>
                   <option>Wedding Film</option>
@@ -163,7 +163,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="text-gray-500 text-xs tracking-widest uppercase font-inter block mb-2">
+                <label className="text-gray-500 text-xs tracking-widest uppercase font-inter block mb-3">
                   Message
                 </label>
                 <textarea
@@ -173,7 +173,7 @@ export default function Contact() {
                   required
                   rows={5}
                   placeholder="Tell me a bit about your project..."
-                  className="w-full bg-[#111111] border border-white/10 text-white font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 placeholder-gray-700 transition-colors resize-none"
+                  className="w-full bg-white border border-black/10 text-black font-inter text-sm px-4 py-3 focus:outline-none focus:border-[#C9A84C]/60 placeholder-gray-700 transition-colors resize-none"
                 />
               </div>
 
@@ -190,13 +190,16 @@ export default function Contact() {
               href="https://wa.me/923001234567"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-3 w-full border border-white/10 text-gray-400 font-inter text-sm tracking-widest uppercase py-4 mt-4 hover:border-green-500/40 hover:text-green-400 transition-all duration-300"
+              className="flex items-center justify-center gap-3 w-full border border-black/30 text-gray-400 font-inter text-sm tracking-widest uppercase py-4 mt-2 hover:border-green-500/40 hover:text-green-400 transition-all duration-300"
             >
               <span className="text-lg">💬</span> Chat on WhatsApp
             </a>
           </motion.div>
         </div>
       </div>
+
+      {/* ── Film strip bottom decoration ── */}
+      <div className="mt-35 w-full bottom-0 left-0 right-0 h-2 bg-[#C9A84C]/40 z-10" />
     </section>
   );
 }

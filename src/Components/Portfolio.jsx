@@ -141,7 +141,7 @@ export default function Portfolio() {
       : portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="bg-[#0D0D0D] py-24 px-6">
+    <section id="portfolio" className="bg-white pt-24 md:px-6 sm:px-6 px-0">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -154,7 +154,7 @@ export default function Portfolio() {
           <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase font-inter mb-4">
             My Work
           </p>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-black">
             Portfolio
           </h2>
           <div className="w-16 h-0.5 bg-[#C9A84C] mx-auto mt-6" />
@@ -169,7 +169,7 @@ export default function Portfolio() {
               className={`px-5 py-2 text-xs tracking-widest uppercase font-inter transition-all duration-300 ${
                 activeCategory === cat
                   ? "bg-[#C9A84C] text-black"
-                  : "border border-white/20 text-gray-400 hover:border-[#C9A84C]/50 hover:text-[#C9A84C]"
+                  : "border border-black/20 text-gray-400 hover:border-[#C9A84C]/50 hover:text-[#C9A84C]"
               }`}
             >
               {cat}
@@ -198,6 +198,9 @@ export default function Portfolio() {
           <VideoModal item={selectedItem} onClose={() => setSelectedItem(null)} />
         )}
       </AnimatePresence>
+
+      {/* ── Film strip bottom decoration ── */}
+      <div className="mt-35 w-full bottom-0 left-0 right-0 h-2 bg-[#C9A84C]/40 z-10" />
     </section>
   );
 }
@@ -249,6 +252,7 @@ function PortfolioCard({ item, index, onClick }) {
           </span>
         </div>
       </div>
+
     </motion.div>
   );
 }

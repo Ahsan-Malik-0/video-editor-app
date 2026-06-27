@@ -1,5 +1,5 @@
 import './App.css';
-import CustomCursor from './components/CustomCursor';
+// import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="bg-[#0A0A0A] min-h-screen">
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Navbar />
       <Hero />
       <Services />

@@ -63,7 +63,7 @@ export default function Testimonials() {
   const next = () => setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
 
   return (
-    <section id="testimonials" className="bg-[#0D0D0D] py-24 px-6 overflow-hidden">
+    <section id="testimonials" className="bg-white pt-24 md:px-6 sm:px-6 px-0 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -76,7 +76,7 @@ export default function Testimonials() {
           <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase font-inter mb-4">
             Client Words
           </p>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-black">
             Testimonials
           </h2>
           <div className="w-16 h-0.5 bg-[#C9A84C] mx-auto mt-6" />
@@ -87,20 +87,22 @@ export default function Testimonials() {
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.4 }}
-              className="bg-[#111111] border border-white/5 p-8 md:p-12 text-center"
+              className="bg-[#111111] border border-black/5 p-8 md:p-12 text-center"
             >
               {/* Quote mark */}
-              <span className="font-cinzel text-7xl text-[#C9A84C]/20 leading-none block mb-4">"</span>
+              <span className="font-cinzel text-7xl text-[#C9A84C]/80 leading-none block mb-4">"</span>
 
               <p className="text-gray-300 font-inter text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
                 {testimonials[active].review}
               </p>
 
-              <StarRating count={testimonials[active].rating} />
+              <div className="flex items-center justify-center">
+                <StarRating count={testimonials[active].rating} />
+              </div>
 
               <div className="flex items-center justify-center gap-4 mt-6">
                 <img
@@ -124,7 +126,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-6 mt-8">
             <button
               onClick={prev}
-              className="w-10 h-10 border border-white/20 text-gray-400 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300 flex items-center justify-center"
+              className="w-10 h-10 border border-black/80 text-gray-800 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300 flex items-center justify-center"
             >
               ←
             </button>
@@ -138,7 +140,7 @@ export default function Testimonials() {
                   className={`transition-all duration-300 ${
                     i === active
                       ? "w-6 h-1 bg-[#C9A84C]"
-                      : "w-2 h-1 bg-white/20 hover:bg-white/40"
+                      : "w-2 h-1 bg-black/80 hover:bg-black/40"
                   }`}
                 />
               ))}
@@ -146,13 +148,16 @@ export default function Testimonials() {
 
             <button
               onClick={next}
-              className="w-10 h-10 border border-white/20 text-gray-400 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300 flex items-center justify-center"
+              className="w-10 h-10 border border-black/80 text-gray-800 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300 flex items-center justify-center"
             >
               →
             </button>
           </div>
         </div>
       </div>
+
+      {/* ── Film strip bottom decoration ── */}
+      <div className="mt-35 w-full bottom-0 left-0 right-0 h-2 bg-[#C9A84C]/40 z-10" />
     </section>
   );
 }

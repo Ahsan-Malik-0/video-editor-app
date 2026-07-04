@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import heroVideo from "../assets/mov_bbb.mp4";
 
 export default function Hero() {
   const videoRef = useRef(null);
@@ -10,18 +11,18 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-[#ffffff]">
+    <section className="relative flex items-center justify-center overflow-hidden bg-[#ffffff] lg:mt-20 md:mt-16 sm:mt-16 mt-10 pt-10">
 
       {/* ── Background Video ── */}
-      <video
+      {/* <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        src="./assets/hero.mp4"
+        src={heroVideo}
         autoPlay
         loop
         muted={muted}
         playsInline
-      />
+      /> */}
 
       {/* ── Dark cinematic overlay — heavier at bottom for text legibility ── */}
       {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/20" />
@@ -34,7 +35,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-end px-8 pt-8">
         <button
           onClick={() => setMuted((m) => !m)}
-          className="flex items-center gap-2 text-white/40 hover:text-[#C9A84C] transition-colors duration-300 text-xs font-inter tracking-widest uppercase"
+          className="flex items-center gap-2 text-black/40 hover:text-[#C9A84C] transition-colors duration-300 text-xs font-inter tracking-widest uppercase"
         >
           <span className="text-lg">{muted ? "🔇" : "🔊"}</span>
           <span className="hidden sm:inline">{muted ? "Sound Off" : "Sound On"}</span>
@@ -42,10 +43,10 @@ export default function Hero() {
       </div>
 
       {/* ── Film strip top decoration ── */}
-      <div className="absolute top-0 left-0 right-0 h-2 bg-[#C9A84C]/60 z-10" />
+      {/* <div className="absolute top-0 left-0 right-0 h-2 bg-[#C9A84C]/60 z-10" /> */}
 
       {/* ── Main content — bottom-left aligned, cinematic layout ── */}
-      <div className="relative z-10 px-8 md:px-16 pb-24 md:pb-28 max-w-5xl">
+      <div className="relative z-10 px-8 md:px-16 pb-24 md:pb-28 max-w-5xl flex flex-col items-center justify-center">
 
         {/* Label */}
         <motion.div
@@ -58,6 +59,7 @@ export default function Hero() {
           <span className="text-[#C9A84C] text-xs tracking-[0.5em] uppercase font-inter">
             Professional Video Editor
           </span>
+          <div className="w-10 h-px bg-[#C9A84C]" />
         </motion.div>
 
         {/* Main heading */}
@@ -65,7 +67,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className="font-cinzel font-bold text-[#0A0A0A] leading-[1.05] mb-6"
+          className="font-cinzel text-center font-bold text-[#0A0A0A] leading-[1.05] mb-6"
           style={{ fontSize: "clamp(2.8rem, 8vw, 7rem)" }}
         >
           Your Story,
@@ -80,9 +82,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-gray-700/80 font-inter text-base md:text-lg leading-relaxed mb-10 max-w-xl"
+          className="text-gray-700/80 font-inter text-center text-base md:text-lg leading-relaxed mb-10 max-w-xl"
         >
-          Wedding films, birthday memories, event highlights — I take your raw footage
+          Wedding films, birthday memories, event highlights. I take your raw footage
           and shape it into something you'll want to watch again and again.
         </motion.p>
 
@@ -91,7 +93,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-4 justify-center item-center"
         >
           <button
             onClick={() => scrollTo("portfolio")}
@@ -113,7 +115,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.3 }}
-          className="flex gap-10 mt-14 pt-8 border-t border-[#0A0A0A]/10"
+          className="flex gap-10 mt-14 pt-8 border-t border-black/30 justify-center"
         >
           {[
             { number: "150+", label: "Videos Edited" },
@@ -122,7 +124,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label}>
               <p className="font-cinzel text-2xl md:text-3xl font-bold text-[#C9A84C]">{stat.number}</p>
-              <p className="text-gray-500 text-xs tracking-widest uppercase font-inter mt-1">{stat.label}</p>
+              <p className="text-gray-800 text-xs tracking-widest uppercase font-inter mt-1">{stat.label}</p>
             </div>
           ))}
         </motion.div>
